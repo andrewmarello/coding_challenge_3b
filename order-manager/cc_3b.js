@@ -43,4 +43,30 @@ console.log("Added new item: SKU-005 | Mattress | $499.99 | Stock: 20");
 let removedItem = inventory.pop();
 console.log(`Removed product: ${removedItem.name}`);
 
-// Step 4: Process Orders
+inventory[0].price = 24.99; // Blanket price dropped (Simulated Sale)
+console.log(`Updated price for ${inventory[0].name}: $${inventory[0].price}`);
+
+inventory[3].stock += 20; // Comforter stock increased (Simulated Restock)
+console.log(`Updated stock for ${inventory[3].name}: Stock: ${inventory[3].stock}`);
+
+// Step 4: Create and Proces Orders
+let orders = [
+    {
+        orderID = "ORDER-001",
+        items: [
+            { sku: "SKU-001", quantity: 2}, // 2 Blankets
+            { sku: "SKU-002", quantity: 4}  // 4 Pillows
+            { sku: "SKU-003", quantity: 2}  // 2 Bed Sheets
+            { sku: "SKU-004", quantity: 1}  // 1 Comforter
+        ]
+    },
+    {
+        orderID = "ORDER-002",
+        items: [
+            { sku: "SKU-001", quantity: 5}, // 10 Blankets
+            { sku: "SKU-002", quantity: 10}  // 20 Pillows
+            { sku: "SKU-003", quantity: 5}  // 10 Bed Sheets
+            { sku: "SKU-004", quantity: 2}  // 5 Comforters
+        ]
+    }
+];
