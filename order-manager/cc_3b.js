@@ -28,4 +28,19 @@ let inventory = [
     }
 ];
 
+inventory.forEach(item => {
+    console.log(`${item.sku} | ${item.name} | $${item.price} | Stock: ${item.stock}`);
+});
+
 //Step 3: Manage Inventory Changes
+inventory.push({
+    sku: "SKU-005",
+    name: "Mattress",
+    price: 499.99,
+    stock: 20
+});
+console.log("Added new item: SKU-005 | Mattress | $499.99 | Stock: 20");
+let removedItem = inventory.pop();
+console.log(`Removed product: ${removedItem.name}`);
+
+// Step 4: Process Orders
