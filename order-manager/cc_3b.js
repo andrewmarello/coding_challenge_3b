@@ -74,8 +74,24 @@ orders.forEach(order => {
     }
 });
 
-// Final inventory
 console.log("\nInventory after orders:");
 inventory.forEach(item => {
     console.log(`${item.sku} | ${item.name} | $${item.price} | Stock: ${item.stock}`);
 });
+
+// Step 5: Reporting & Insights
+
+let totalInventoryValue = inventory.reduce((total, item) => {
+    return total + item.price * item.stock;
+}, 0);
+console.log(`Total inventory value: $${totalInventoryValue.toFixed(2)}`);
+
+const lowStockItems = inventory.filter(item => item.stock <= 5);
+console.log("Low-stock items:");
+lowStockItems.forEach(item => {
+    console.log(`${item.sku} | ${item.name} | Stock: ${item.stock}`);
+});
+
+const priceList = inventory.map(item => `${item.sku} — $${item.price.toFixed(2)}`);
+console.log("Price list:");
+priceList.forEach(price => console.log(price));
