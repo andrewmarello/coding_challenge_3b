@@ -47,7 +47,6 @@ orders.forEach(order => {
     let orderTotal = 0;
     let errorMsg = "";
 
-    // Check stock and calculate total
     order.items.forEach(orderItem => {
         let product = inventory.find(inv => inv.sku === orderItem.sku);
         
@@ -62,7 +61,6 @@ orders.forEach(order => {
         }
     });
 
-    // Process order if possible
     if (canProcess) {
         order.items.forEach(orderItem => {
             let product = inventory.find(inv => inv.sku === orderItem.sku);
